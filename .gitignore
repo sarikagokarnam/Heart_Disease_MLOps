@@ -10,11 +10,16 @@ __pycache__/
 mlruns/
 mlflow.db
 
-# Generated model files
+# Generated model
 models/*.pkl
 
 # Generated reports
 reports/*.png
+reports/*.html
 
 # DVC cache
 .dvc/cache/
+
+# Dataset files managed by DVC
+data/heart_disease.csv
+data/processed.cleveland.data
