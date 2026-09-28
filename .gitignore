@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# PyCharm
+.idea/
+
+# MLflow
+mlruns/
+mlflow.db
+
+# Generated model files
+models/*.pkl
+
+# Generated reports
+reports/*.png
+
+# DVC cache
+.dvc/cache/
