@@ -11,7 +11,7 @@ mlruns/
 mlflow.db
 
 # Generated model
-models/*.pkl
+# models/*.pkl is intentionally committed so Render can serve predictions
 
 # Generated reports
 reports/*.png

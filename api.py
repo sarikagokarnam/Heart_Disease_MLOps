@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 import pandas as pd
@@ -12,8 +14,9 @@ app = FastAPI(
 )
 
 
-# Load trained model
-model = joblib.load("models/heart_disease_model.pkl")
+# Load trained model (absolute path so it works from any working directory)
+MODEL_PATH = Path(__file__).resolve().parent / "models" / "heart_disease_model.pkl"
+model = joblib.load(MODEL_PATH)
 
 
 # Input data format
@@ -46,7 +49,8 @@ def home():
 @app.get("/health")
 def health():
     return {
-        "status": "healthy"
+        "status": "healthy",
+        "model_loaded": model is not None
     }
 
 
